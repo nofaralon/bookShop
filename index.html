@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book shop</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="init()">
+    <h1>Welcome to my Bookshop!</h1>
+
+    <button class="add-book" onclick="onAddBook()">ADD a Book</button>
+
+    <div class="adding">
+        <input class="name" type="name" placeholder="Enter book name" />
+        <input class="price" type="number" placeholder="price" />
+        <button class="adding-book">Add</button>
+    </div>
+
+    <div class="updating">
+        <input class="price" type="number" placeholder="price" />
+        <button class="update-price">Update</button>
+    </div>
+
+
+    <section class="book-sorting">
+        <select onchange="onSortingBook(this.value)">
+            <option value="NAME">Name</option>
+            <option value="PRICE">Price</option>
+        </select>
+    </section>
+
+    <section class="books-container">
+        <table>
+            <thead>
+                <th>id</th>
+                <th>name</th>
+                <th>price</th>
+                <th colspan="3">Actions</th>
+            </thead>
+            <tbody class="books-list">
+
+            </tbody>
+        </table>
+    </section>
+
+    <button class="next-page" onclick="onNextPage()">Next Page</button>
+
+    <div class="modal" hidden>
+        <h4></h4>
+        <div></div>
+        <p></p>
+        <h6>Price: </h6>
+        <div class="rating">
+        <span> Book rate: </span>
+        <button onclick="onUpRate()"> + </button> <span class="rate"> </span> <button onclick="onDownRate()"> - </button>
+        </div>
+        <button class="close" onclick="onCloseModal()">Close</button>
+    </div>
+
+
+
+    <script src="js/utils.js"></script>
+    <script src="js/storage.service.js"></script>
+    <script src="js/book-service.js"></script>
+    <script src="js/book-controller.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
